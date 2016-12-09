@@ -3074,6 +3074,9 @@ bool MainWindow::validate_secret(const uint8_t *secret) const {
       return true;
     }
   }
+  if (ui->secretEdit->text().length() == 0){
+      return true;
+  }
   csApplet()->warningBox(tr("Your secret is invalid. Please change the secret."));
   return false;
 }
